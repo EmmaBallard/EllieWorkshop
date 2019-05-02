@@ -19,9 +19,9 @@ rstan_options(auto_write = TRUE)
 ## 1 Simple binomial logistic regressions
 ## 1.1 Running the stan model
 
-data1 <- read_rdump("Q:\\RProjects\\Teaching_Rstan\\data_IRS.R")
+data1 <- read_rdump("C:\\Users\\georg\\Documents\\Teaching_Rstan\\data_IRS.R")
 
-stan_base <- stan(file="Q:\\RProjects\\Teaching_Rstan\\simple_binomial_regression.stan", 
+stan_base <- stan(file="C:\\Users\\georg\\Documents\\Teaching_Rstan\\simple_binomial_regression.stan", 
                   data=data1, 
                   warmup=1000,
                   control = list(adapt_delta = 0.8,
@@ -126,9 +126,9 @@ for(i in 1:4000){
 ##
 #######################################################
 
-data2 <- read_rdump("Q:\\RProjects\\Teaching_Rstan\\data_IRS_reff.R")
+data2 <- read_rdump("C:\\Users\\georg\\Documents\\Teaching_Rstan\\data_IRS_reff.R")
 
-stan2 <- stan(file="Q:\\RProjects\\Teaching_Rstan\\random_effects_binomial_regression.stan", 
+stan2 <- stan(file="C:\\Users\\georg\\Documents\\Teaching_Rstan\\random_effects_binomial_regression.stan", 
               data=data2, 
               warmup=500,
               control = list(adapt_delta = 0.9,
@@ -174,7 +174,7 @@ for(i in 1:2000){
 
 # https://github.com/stan-dev/stancon_talks/tree/master/2017/Contributed-Talks/05_margossian/models/effCpt
 
-RUNDATA <- read_rdump("Q:\\RProjects\\Teaching_Rstan\\template_data.R") ## Coverage data March 2019
+RUNDATA <- read_rdump("C:\\Users\\georg\\Documents\\Teaching_Rstan\\template_data.R") ## Coverage data March 2019
 
 ## initial estimates will be generated randomly for each chain
 init <- function(){
@@ -205,7 +205,7 @@ nThin <- 1
 nIter <- (nBurn + nPost) * nThin
 nBurnin <- nBurn * nThin
 
-fit <- stan(file = "Q:\\RProjects\\Teaching_Rstan\\Template_ODE_model.stan",
+fit <- stan(file = "C:\\Users\\georg\\Documents\\Teaching_Rstan\\Template_ODE_model.stan",
             data = RUNDATA,
             pars = parameters,
             iter = nIter,
